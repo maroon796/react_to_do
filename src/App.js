@@ -1,11 +1,27 @@
 import { useState } from 'react';
 import ToDo from './ToDo';
-import Form from './Form';
+import FormToDo from './FormToDo';
 
 function App() {
   const [todoItems, setTodoItems] = useState([]);
 
-  return <div className="App"></div>;
+  const addTask = () => {};
+
+  const removeTask = () => {};
+
+  const removeToggle = () => {};
+
+  return (
+    <div className="App">
+      <header>
+        <h1>ToDo List: {todoItems.length}</h1>
+      </header>
+      <FormToDo />
+      {todoItems.map((todo) => {
+        return <ToDo key={todo.id} />;
+      })}
+    </div>
+  );
 }
 
 export default App;
