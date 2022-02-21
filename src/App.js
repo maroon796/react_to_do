@@ -9,16 +9,16 @@ function App() {
 
   const removeTask = () => {};
 
-  const removeToggle = () => {};
+  const handleToggle = () => {};
 
   return (
     <div className="App">
       <header>
         <h1>ToDo List: {todoItems.length}</h1>
       </header>
-      <FormToDo />
+      <FormToDo addTask={addTask} />
       {todoItems.map((todo) => {
-        return <ToDo key={todo.id} />;
+        return <ToDo todo={todo} key={todo.id} toggleTask={handleToggle} removeTask={removeTask} />;
       })}
     </div>
   );
